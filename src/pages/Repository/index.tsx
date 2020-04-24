@@ -85,7 +85,7 @@ const Repository: React.FC = () => {
           </ul>
         </RepositoryInfo>
       ) : (
-        <Loading>Carregando...</Loading>
+        <Loading>Loading...</Loading>
       )}
 
       <Issues>

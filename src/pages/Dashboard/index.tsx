@@ -37,12 +37,9 @@ const Dashboard: React.FC = () => {
     e: FormEvent<HTMLFormElement>
   ): Promise<void> {
     e.preventDefault();
-    // adicionar novo repositorio
-    // consumir api do github
-    // adicionar
 
     if (!newRepo) {
-      setInputError('Digite o autor/nome do repositório');
+      setInputError('Press the author/name of the repository');
       return;
     }
 
@@ -56,22 +53,22 @@ const Dashboard: React.FC = () => {
     } catch (err) {
       console.error(err);
 
-      setInputError('Erro na busca por esse repositório');
+      setInputError('Error on the search for the repository');
     }
   }
 
   return (
     <>
       <img src={logo} alt="Github Explorer" />
-      <Title>Explore Repositórios no Github</Title>
+      <Title>Explore repositories at Github</Title>
 
       <Form hasError={Boolean(inputError)} onSubmit={handleAddRepository}>
         <input
           value={newRepo}
           onChange={(e) => setNewRepo(e.target.value)}
-          placeholder="Digite o nome do repositório"
+          placeholder="Press the name of the repository"
         />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">Search</button>
       </Form>
 
       {inputError && <Error>{inputError}</Error>}
